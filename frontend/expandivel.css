@@ -1,0 +1,276 @@
+/* ========== Tabela Expansível ========== */
+
+.tabela-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: #f8fafc;
+  color: var(--cinza);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--borda);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+tbody tr.empenho {
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+tbody tr.empenho:hover {
+  background: #f0fdfa;
+}
+
+tbody tr.empenho td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--borda);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+tbody tr.empenho td:last-child {
+  text-align: right;
+}
+
+/* Botão de expansão */
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  background: none;
+  border: none;
+  color: var(--primario);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 0.2s;
+  padding: 0;
+}
+
+tbody tr.empenho.expandido .expand-btn {
+  transform: rotate(180deg);
+}
+
+/* Linha de detalhe (expandida) */
+tbody tr.detalhe-empenho {
+  display: none;
+}
+
+tbody tr.detalhe-empenho.visivel {
+  display: table-row;
+}
+
+tbody tr.detalhe-empenho td {
+  padding: 0;
+  border-bottom: none;
+  background: #f0fdfa;
+}
+
+/* Card de detalhe */
+.card-detalhe {
+  padding: 20px;
+  background: #f0fdfa;
+  border-left: 4px solid var(--primario);
+  margin: 0;
+}
+
+.detalhe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.detalhe-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detalhe-item strong {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cinza);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.detalhe-item span {
+  font-size: 14px;
+  color: var(--texto);
+  word-break: break-word;
+  font-weight: 500;
+}
+
+.detalhe-item .cpf-label {
+  color: var(--cinza);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Histórico no detalhe */
+.detalhe-item.historico strong {
+  grid-column: 1 / -1;
+}
+
+.detalhe-item.historico span {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cinza);
+  font-weight: normal;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 6px;
+  border-left: 3px solid var(--primario-suave);
+}
+
+/* Valores monetários */
+.valor-empenho {
+  text-align: right;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.valor-liquidado {
+  color: #059669;
+}
+
+.valor-pago {
+  color: #2563eb;
+}
+
+.saldo-devedor {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* Alertas/Badges de anomalia */
+.alerta-badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  cursor: help;
+  margin-right: 4px;
+}
+
+.alerta-badge:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background: #1f2937;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-top: -25px;
+  margin-left: -50px;
+}
+
+/* Linha de ações no detalhe */
+.detalhe-acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e7ff;
+  grid-column: 1 / -1;
+}
+
+.detalhe-acoes button {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--primario);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.detalhe-acoes button:hover {
+  background: var(--primario-escuro);
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-empenhado {
+  background: #fef08a;
+  color: #854d0e;
+}
+
+.status-liquidado {
+  background: #bbf7d0;
+  color: #065f46;
+}
+
+.status-pago {
+  background: #bfdbfe;
+  color: #1e40af;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .detalhe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  tbody tr.empenho td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .card-detalhe {
+    padding: 14px;
+  }
+
+  /* Esconde colunas menos importantes em mobile */
+  table th:nth-child(n+6),
+  table td:nth-child(n+6) {
+    display: none;
+  }
+
+  /* Mostra número do empenho mais destacado */
+  tbody tr.empenho td:first-child {
+    font-weight: 700;
+    color: var(--primario);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
