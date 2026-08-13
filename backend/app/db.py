@@ -34,9 +34,13 @@ def _connect() -> sqlite3.Connection:
 
 def _executar(conn, sql: str, params: tuple | list) -> None:
     """Executa SQL sem retorno, abstraindo placeholder (? no SQLite, %s no Postgres)."""
-    if _USA_POSTGRES:
-        sql = sql.replace("?", "%s")
-    conn.execute(sql, params)
+    cur = conn.cursor()
+    try:
+        if _USA_POSTGRES:
+            sql = sql.replace("?", "%s")
+        cur.execute(sql, params)
+    finally:
+        cur.close()
 
 
 def _filas(conn, sql: str, params: tuple | list) -> list:
