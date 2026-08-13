@@ -1,0 +1,1308 @@
+[
+  {
+    "id": "prefjaparatinga-al",
+    "nome": "Prefeitura Municipal de Japaratinga - AL",
+    "uf": "AL",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefjaparatinga-al"
+    }
+  },
+  {
+    "id": "camarenapolis-mt",
+    "nome": "CAMARA MUNICIPAL DE ARENAPOLIS",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camarenapolis-mt"
+    }
+  },
+  {
+    "id": "camaripuana-mt",
+    "nome": "CAMARA MUNICIPAL DE ARIPUANA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camaripuana-mt"
+    }
+  },
+  {
+    "id": "camcarlinda-mt",
+    "nome": "CAMARA MUNICIPAL DE CARLINDA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camcarlinda-mt"
+    }
+  },
+  {
+    "id": "camconquistadoeste-mt",
+    "nome": "CAMARA MUNICIPAL DE CONQUISTA D' OESTE",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camconquistadoeste-mt"
+    }
+  },
+  {
+    "id": "camdenise-mt",
+    "nome": "CAMARA MUNICIPAL DE DENISE",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camdenise-mt"
+    }
+  },
+  {
+    "id": "camitanhanga-mt",
+    "nome": "CAMARA MUNICIPAL DE ITANHANGA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camitanhanga-mt"
+    }
+  },
+  {
+    "id": "camitauba-mt",
+    "nome": "CAMARA MUNICIPAL DE ITAUBA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camitauba-mt"
+    }
+  },
+  {
+    "id": "camjangada-mt",
+    "nome": "CAMARA MUNICIPAL DE JANGADA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camjangada-mt"
+    }
+  },
+  {
+    "id": "camjuara-mt",
+    "nome": "CAMARA MUNICIPAL DE JUARA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camjuara-mt"
+    }
+  },
+  {
+    "id": "camjuruena-mt",
+    "nome": "CAMARA MUNICIPAL DE JURUENA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camjuruena-mt"
+    }
+  },
+  {
+    "id": "cammarcelandia-mt",
+    "nome": "CAMARA MUNICIPAL DE MARCELANDIA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "cammarcelandia-mt"
+    }
+  },
+  {
+    "id": "camnovabandeirantes-mt",
+    "nome": "CAMARA MUNICIPAL DE NOVA BANDEIRANTES",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camnovabandeirantes-mt"
+    }
+  },
+  {
+    "id": "camnovasantahelena-mt",
+    "nome": "CAMARA MUNICIPAL DE NOVA SANTA HELENA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camnovasantahelena-mt"
+    }
+  },
+  {
+    "id": "camnovaubiratamt",
+    "nome": "CAMARA MUNICIPAL DE NOVA UBIRATA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camnovaubiratamt"
+    }
+  },
+  {
+    "id": "camnovomundo-mt",
+    "nome": "CAMARA MUNICIPAL DE NOVO MUNDO",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camnovomundo-mt"
+    }
+  },
+  {
+    "id": "camparanatinga-mt",
+    "nome": "CAMARA MUNICIPAL DE PARANATINGA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camparanatinga-mt"
+    }
+  },
+  {
+    "id": "campocone-mt",
+    "nome": "CAMARA MUNICIPAL DE POCONE",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "campocone-mt"
+    }
+  },
+  {
+    "id": "camportoalegrenorte-mt",
+    "nome": "CAMARA MUNICIPAL DE PORTO ALEGRE DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camportoalegrenorte-mt"
+    }
+  },
+  {
+    "id": "camportogauchos-mt",
+    "nome": "CAMARA MUNICIPAL DE PORTO DOS GAUCHOS",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camportogauchos-mt"
+    }
+  },
+  {
+    "id": "camsantacruzxingu-mt",
+    "nome": "CAMARA MUNICIPAL DE SANTA CRUZ DO XINGU",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camsantacruzxingu-mt"
+    }
+  },
+  {
+    "id": "camsantaritatrivelato-mt",
+    "nome": "CAMARA MUNICIPAL DE SANTA RITA DO TRIVELATO",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camsantaritatrivelato-mt"
+    }
+  },
+  {
+    "id": "camsantoafonso-mt",
+    "nome": "CAMARA MUNICIPAL DE SANTO AFONSO",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camsantoafonso-mt"
+    }
+  },
+  {
+    "id": "camuniaosul-mt",
+    "nome": "CAMARA MUNICIPAL DE UNIAO DO SUL",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camuniaosul-mt"
+    }
+  },
+  {
+    "id": "camvera-mt",
+    "nome": "CAMARA MUNICIPAL DE VERA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camvera-mt"
+    }
+  },
+  {
+    "id": "camipiranganorte-mt",
+    "nome": "CAMARA MUNICIPAL DE VEREADORES DE IPIRANGA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camipiranganorte-mt"
+    }
+  },
+  {
+    "id": "camnovaguarita-mt",
+    "nome": "CAMARA MUNICIPAL DE VEREADORES DE NOVA GUARITA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camnovaguarita-mt"
+    }
+  },
+  {
+    "id": "camterranovanorte-mt",
+    "nome": "CAMARA MUNICIPAL DE VEREADORES DE TERRA NOVA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camterranovanorte-mt"
+    }
+  },
+  {
+    "id": "camcanabravanorte-mt",
+    "nome": "CANABRAVA DO NORTE CAMARA MUNICIPAL",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camcanabravanorte-mt"
+    }
+  },
+  {
+    "id": "conscidesasorriso-mt",
+    "nome": "CIDESA ALTO TELE PIRES",
+    "uf": "MT",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "conscidesasorriso-mt"
+    }
+  },
+  {
+    "id": "conscidesanortearaguaia-mt",
+    "nome": "CIDESA NORTE ARAGUAIA",
+    "uf": "MT",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "conscidesanortearaguaia-mt"
+    }
+  },
+  {
+    "id": "consvaletelespires-mt",
+    "nome": "CONSORCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONOMICO E SOCIAL DO VALE DO TELES PIRES",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "consvaletelespires-mt"
+    }
+  },
+  {
+    "id": "consintermdesenveconomicosocialeambientevalejuruena-mt",
+    "nome": "CONSORCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONOMICO, SOCIAL E AMBIENTAL VALE DO JURUENA",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "consintermdesenveconomicosocialeambientevalejuruena-mt"
+    }
+  },
+  {
+    "id": "consportalamazonia-mt",
+    "nome": "CONSORCIO INTERMUNICIPAL DE DESENVOLVIMENTO SUSTENTAVEL PORTAL DA AMAZONIA",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "consportalamazonia-mt"
+    }
+  },
+  {
+    "id": "consciscndiamantino-mt",
+    "nome": "CONSORCIO INTERMUNICIPAL DE SAUDE DA REGIAO CENTRO-NORTE DE MATO GROSSO",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "consciscndiamantino-mt"
+    }
+  },
+  {
+    "id": "consintersaudevalejuruena-mt",
+    "nome": "CONSORCIO INTERMUNICIPAL DE SAUDE DO VALE DO JURUENA",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "consintersaudevalejuruena-mt"
+    }
+  },
+  {
+    "id": "conscisvarc-mt",
+    "nome": "Consorcio Intermunicipal de Saude Vale do Rio Cuiaba - Cisvarc",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "conscisvarc-mt"
+    }
+  },
+  {
+    "id": "conscisrnmt-mt",
+    "nome": "Consorcio Intermunicipal de Saude da Regiao Norte Matogrossense",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "conscisrnmt-mt"
+    }
+  },
+  {
+    "id": "consvalearinoscindvale-mt",
+    "nome": "Consórcio do Vale do Arinos - Cindvale",
+    "uf": "MT",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "consvalearinoscindvale-mt"
+    }
+  },
+  {
+    "id": "cambaraomelgaco-mt",
+    "nome": "CÂMARA MUNICIPAL BARÃO DE MELGAÇO - MT",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "cambaraomelgaco-mt"
+    }
+  },
+  {
+    "id": "camcastanheira-mt",
+    "nome": "CÂMARA MUNICIPAL DE CASTANHEIRA",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camcastanheira-mt"
+    }
+  },
+  {
+    "id": "camnovosaojoaquim-mt",
+    "nome": "CÂMARA MUNICIPAL DE NOVO SÃO JOAQUIM",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camnovosaojoaquim-mt"
+    }
+  },
+  {
+    "id": "camboaesperancanorte-mt",
+    "nome": "Câmara Municipal de Boa Esperança do Norte-MT",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camboaesperancanorte-mt"
+    }
+  },
+  {
+    "id": "camclaudia-mt",
+    "nome": "Câmara Municipal de Cláudia",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camclaudia-mt"
+    }
+  },
+  {
+    "id": "fmsitauba-mt",
+    "nome": "FUNDACAO HOSPITALAR DE SAUDE MUNICIPAL DE ITAUBA",
+    "uf": "MT",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "fmsitauba-mt"
+    }
+  },
+  {
+    "id": "prevvera-mt",
+    "nome": "FUNDO MUNICIPAL DE PREVIDENCIA DOS SERVIDORES DE VERA",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevvera-mt"
+    }
+  },
+  {
+    "id": "previtauba-mt",
+    "nome": "FUNDO MUNICIPAL DE PREVIDENCIA SOCIAL DOS SERVIDORES DE ITAUBA/MT",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "previtauba-mt"
+    }
+  },
+  {
+    "id": "prevmarcelandia-mt",
+    "nome": "FUNDO MUNICIPAL DE PREVIDENCIA SOCIAL DOS SERVIDORES DE MARCELANDIA",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevmarcelandia-mt"
+    }
+  },
+  {
+    "id": "prevterranovanorte-mt",
+    "nome": "FUNDO MUNICIPAL DE PREVIDENCIA SOCIAL TERRA NOVA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevterranovanorte-mt"
+    }
+  },
+  {
+    "id": "prevguarantanorte-mt",
+    "nome": "FUNDO MUNICIPAL DE PREVIDÊNCIA SOCIAL DE GUARANTÃ DO NORTE/MT",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevguarantanorte-mt"
+    }
+  },
+  {
+    "id": "camguarantanorte-mt",
+    "nome": "GUARANTA DO NORTE CAMARA MUNICIPAL",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camguarantanorte-mt"
+    }
+  },
+  {
+    "id": "camnovamonteverde-mt",
+    "nome": "MONTE VERDE CAMARA MUNICIPAL",
+    "uf": "MT",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camnovamonteverde-mt"
+    }
+  },
+  {
+    "id": "arenapolis",
+    "nome": "MUNICIPIO DE ARENAPOLIS",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "arenapolis"
+    }
+  },
+  {
+    "id": "aripuana",
+    "nome": "MUNICIPIO DE ARIPUANA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "aripuana"
+    }
+  },
+  {
+    "id": "prefboaesperanca-mt",
+    "nome": "MUNICIPIO DE BOA ESPERANCA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefboaesperanca-mt"
+    }
+  },
+  {
+    "id": "prefcampinapolismt",
+    "nome": "MUNICIPIO DE CAMPINAPOLIS",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefcampinapolismt"
+    }
+  },
+  {
+    "id": "canabravanorte",
+    "nome": "MUNICIPIO DE CANABRAVA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "canabravanorte"
+    }
+  },
+  {
+    "id": "prefcarlinda-mt",
+    "nome": "MUNICIPIO DE CARLINDA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefcarlinda-mt"
+    }
+  },
+  {
+    "id": "castanheira",
+    "nome": "MUNICIPIO DE CASTANHEIRA - MT -",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "castanheira"
+    }
+  },
+  {
+    "id": "claudia",
+    "nome": "MUNICIPIO DE CLAUDIA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "claudia"
+    }
+  },
+  {
+    "id": "conquistadoeste",
+    "nome": "MUNICIPIO DE CONQUISTA D'OESTE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "conquistadoeste"
+    }
+  },
+  {
+    "id": "prefcotriguacu-mt",
+    "nome": "MUNICIPIO DE COTRIGUAÇU",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefcotriguacu-mt"
+    }
+  },
+  {
+    "id": "prefguarantanorte-mt",
+    "nome": "MUNICIPIO DE GUARANTA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefguarantanorte-mt"
+    }
+  },
+  {
+    "id": "ipiranganorte",
+    "nome": "MUNICIPIO DE IPIRANGA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "ipiranganorte"
+    }
+  },
+  {
+    "id": "itanhanga",
+    "nome": "MUNICIPIO DE ITANHANGA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "itanhanga"
+    }
+  },
+  {
+    "id": "itauba",
+    "nome": "MUNICIPIO DE ITAUBA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "itauba"
+    }
+  },
+  {
+    "id": "jangada",
+    "nome": "MUNICIPIO DE JANGADA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "jangada"
+    }
+  },
+  {
+    "id": "prefjuara-mt",
+    "nome": "MUNICIPIO DE JUARA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefjuara-mt"
+    }
+  },
+  {
+    "id": "prefjuruena-mt",
+    "nome": "MUNICIPIO DE JURUENA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefjuruena-mt"
+    }
+  },
+  {
+    "id": "prefmarcelandia",
+    "nome": "MUNICIPIO DE MARCELANDIA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefmarcelandia"
+    }
+  },
+  {
+    "id": "novabandeirantes",
+    "nome": "MUNICIPIO DE NOVA BANDEIRANTES",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "novabandeirantes"
+    }
+  },
+  {
+    "id": "prefnovaguarita-mt",
+    "nome": "MUNICIPIO DE NOVA GUARITA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefnovaguarita-mt"
+    }
+  },
+  {
+    "id": "prefnovamonteverde-mt",
+    "nome": "MUNICIPIO DE NOVA MONTE VERDE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefnovamonteverde-mt"
+    }
+  },
+  {
+    "id": "prefnovasantahelenamt",
+    "nome": "MUNICIPIO DE NOVA SANTA HELENA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefnovasantahelenamt"
+    }
+  },
+  {
+    "id": "novaubirata",
+    "nome": "MUNICIPIO DE NOVA UBIRATA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "novaubirata"
+    }
+  },
+  {
+    "id": "prefnovomundo-mt",
+    "nome": "MUNICIPIO DE NOVO MUNDO",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefnovomundo-mt"
+    }
+  },
+  {
+    "id": "prefnovosaojoaquim-mt",
+    "nome": "MUNICIPIO DE NOVO SAO JOAQUIM",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefnovosaojoaquim-mt"
+    }
+  },
+  {
+    "id": "portoalegrenorte",
+    "nome": "MUNICIPIO DE PORTO ALEGRE DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "portoalegrenorte"
+    }
+  },
+  {
+    "id": "portogauchos",
+    "nome": "MUNICIPIO DE PORTO DOS GAUCHOS",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "portogauchos"
+    }
+  },
+  {
+    "id": "prefsantacruzxingu-mt",
+    "nome": "MUNICIPIO DE SANTA CRUZ DO XINGU",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefsantacruzxingu-mt"
+    }
+  },
+  {
+    "id": "santaritatrivelato",
+    "nome": "MUNICIPIO DE SANTA RITA DO TRIVELATO",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "santaritatrivelato"
+    }
+  },
+  {
+    "id": "prefsaojosexingu-mt",
+    "nome": "MUNICIPIO DE SAO JOSE DO XINGU",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefsaojosexingu-mt"
+    }
+  },
+  {
+    "id": "prefterranovanortemt",
+    "nome": "MUNICIPIO DE TERRA NOVA DO NORTE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefterranovanortemt"
+    }
+  },
+  {
+    "id": "prefuniaosulmt",
+    "nome": "MUNICIPIO DE UNIAO DO SUL",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefuniaosulmt"
+    }
+  },
+  {
+    "id": "prefbaraomelgaco-mt",
+    "nome": "MUNICÍPIO DE BARÃO DE MELGAÇO",
+    "uf": "MT",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefbaraomelgaco-mt"
+    }
+  },
+  {
+    "id": "prefsantoafonsomt",
+    "nome": "Municipio de Santo Afonso",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefsantoafonsomt"
+    }
+  },
+  {
+    "id": "prefdemonstracaoa2",
+    "nome": "PREFEITURA MUNICIPAL DE DEMONSTRACAO A2",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefdemonstracaoa2"
+    }
+  },
+  {
+    "id": "prefdemonstracaoj1",
+    "nome": "PREFEITURA MUNICIPAL DE DEMONSTRACAO J1",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefdemonstracaoj1"
+    }
+  },
+  {
+    "id": "prefnovohorizontenorte-mt",
+    "nome": "PREFEITURA MUNICIPAL DE NOVO HORIZONTE DO NORTE - MT",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefnovohorizontenorte-mt"
+    }
+  },
+  {
+    "id": "prefparanatinga-mt",
+    "nome": "PREFEITURA MUNICIPAL DE PARANATINGA",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefparanatinga-mt"
+    }
+  },
+  {
+    "id": "prefpoconemt",
+    "nome": "PREFEITURA MUNICIPAL DE POCONE",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefpoconemt"
+    }
+  },
+  {
+    "id": "vera",
+    "nome": "PREFEITURA MUNICIPAL DE VERA/MT",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "vera"
+    }
+  },
+  {
+    "id": "prevcarlinda-mt",
+    "nome": "PREVCAR-FUNDO MUNICIPAL DE PREVIDENCIA SOCIAL DOS SERVIDORES DE CARLINDA",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevcarlinda-mt"
+    }
+  },
+  {
+    "id": "prevsantaritatrivelato-mt",
+    "nome": "PREVIDENCIA SOCIAL DOS SERVIDORES PUBLICOS DO MUNICIPIO DE SANTA RITA DO TRIVELATO",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevsantaritatrivelato-mt"
+    }
+  },
+  {
+    "id": "altoparaguai",
+    "nome": "Prefeitura Municipal de Alto Paraguai",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "altoparaguai"
+    }
+  },
+  {
+    "id": "novabrasilandia",
+    "nome": "Prefeitura Municipal de Nova Brasilândia",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "novabrasilandia"
+    }
+  },
+  {
+    "id": "prevsantoafonso-mt",
+    "nome": "Previdência Social de Santo Afonso",
+    "uf": "MT",
+    "esfera": "municipal (previdência)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevsantoafonso-mt"
+    }
+  },
+  {
+    "id": "saaeipiranganorte-mt",
+    "nome": "S.A.A.E SERVICO AUTONOMO DE AGUA E ESGOTO",
+    "uf": "MT",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "saaeipiranganorte-mt"
+    }
+  },
+  {
+    "id": "saaenovaguarita-mt",
+    "nome": "SERVICO AUTONOMO DE AGUA E ESGOTO",
+    "uf": "MT",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "saaenovaguarita-mt"
+    }
+  },
+  {
+    "id": "prevnovaubirata-mt",
+    "nome": "UBIRATA - PREVI - FUNDO MUNICIPAL DE PREVIDENCIA SOCIAL DOS SERVIDORES DE NOVA UBIRATA",
+    "uf": "MT",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prevnovaubirata-mt"
+    }
+  },
+  {
+    "id": "cammirador-pr",
+    "nome": "CAMARA MUNICIPAL DE MIRADOR",
+    "uf": "PR",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "cammirador-pr"
+    }
+  },
+  {
+    "id": "conscismel-pr",
+    "nome": "Consorcio Intermunicipal de Segurança Pública, Soluções e Melhorias do Norte Central Paranaense",
+    "uf": "PR",
+    "esfera": "intermunicipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "conscismel-pr"
+    }
+  },
+  {
+    "id": "cambirapr",
+    "nome": "MUNICIPIO DE CAMBIRA",
+    "uf": "PR",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "cambirapr"
+    }
+  },
+  {
+    "id": "prefmiradorpr",
+    "nome": "MUNICIPIO DE MIRADOR",
+    "uf": "PR",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "prefmiradorpr"
+    }
+  },
+  {
+    "id": "santaceciliapavao",
+    "nome": "PREF. MUNICIPAL DE SANTA CECILIA DO PAVÃO",
+    "uf": "PR",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "santaceciliapavao"
+    }
+  },
+  {
+    "id": "samaesantaceciliapavaopr",
+    "nome": "SAMAE - Servico Autonomo Municipal de Agua e Esgoto - Santa Cecília do Pavão",
+    "uf": "PR",
+    "esfera": "municipal (autarquia)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "samaesantaceciliapavaopr"
+    }
+  },
+  {
+    "id": "camassu-rn",
+    "nome": "CÂMARA MUNICIPAL DE ASSÚ - RN",
+    "uf": "RN",
+    "esfera": "municipal (câmara)",
+    "tipo": "ipm",
+    "url": "https://transparencia.agilicloud.com.br",
+    "config": {
+      "base": "https://transparencia.agilicloud.com.br",
+      "uc": "camassu-rn"
+    }
+  },
+  {
+    "id": "mt-estado",
+    "nome": "Governo do Estado de Mato Grosso",
+    "uf": "MT",
+    "esfera": "estadual",
+    "tipo": "mt_estado",
+    "url": "https://www.transparencia.mt.gov.br",
+    "config": {
+      "base": "https://consultas.transparencia.mt.gov.br/despesa/por_favorecido/"
+    }
+  },
+  {
+    "id": "rondonopolis",
+    "nome": "Prefeitura de Rondonópolis",
+    "uf": "MT",
+    "esfera": "municipal",
+    "tipo": "ipm",
+    "url": "https://transparencia.rondonopolis.mt.gov.br",
+    "config": {
+      "uc": "rondonopolis"
+    }
+  }
+]

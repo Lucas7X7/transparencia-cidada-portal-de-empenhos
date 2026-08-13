@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Ambiente
+.env
+.env.*
+*.local
+
+# Banco de dados / cache
+backend/data/
+*.db
+*.db-journal
+*.sqlite3
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

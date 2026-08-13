@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparência Cidadã — Portal de Empenhos</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-inner">
+      <span class="tag">Dados públicos · Busca agregada</span>
+      <h1>Transparência Cidadã</h1>
+      <p class="subtitulo">Busque empenhos públicos em portais de transparência de todo o Brasil, centralize resultados e gere relatórios.</p>
+      <div class="estatisticas">
+        <div class="est"><strong id="stat-portais">109</strong>portais cadastrados</div>
+        <div class="est"><strong id="stat-ufs">–</strong>estados cobertos</div>
+        <div class="est"><strong>0</strong>custo para o cidadão</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card busca">
+      <div class="card-titulo"><span class="ico">🔎</span>Consultar despesas</div>
+      <form id="form-busca" autocomplete="off">
+        <div class="grid-filtros">
+          <div class="campo">
+            <label for="portal">Portal de transparência</label>
+            <input id="filtro-portal" type="text" placeholder="Filtrar por nome ou UF...">
+            <select id="portal" name="portal" required></select>
+          </div>
+          <div class="campo">
+            <label for="termo">Palavra-chave</label>
+            <input id="termo" name="termo" type="text" placeholder="Ex.: exposul, hospital, concurso...">
+          </div>
+          <div class="campo">
+            <label for="favorecido">Favorecido</label>
+            <input id="favorecido" name="favorecido" type="text" placeholder="Nome ou razão social">
+          </div>
+          <div class="campo">
+            <label for="cpfcnpj">CPF / CNPJ</label>
+            <input id="cpfcnpj" name="cpfcnpj" type="text" placeholder="Somente números">
+          </div>
+          <div class="campo">
+            <label for="unidade">Unidade orçamentária</label>
+            <input id="unidade" name="unidade" type="text" placeholder="Ex.: 02.009">
+          </div>
+          <div class="campo">
+            <label for="data_ini">Data inicial</label>
+            <input id="data_ini" name="data_ini" type="date">
+          </div>
+          <div class="campo">
+            <label for="data_fim">Data final</label>
+            <input id="data_fim" name="data_fim" type="date">
+          </div>
+          <div class="campo">
+            <label for="min_valor">Valor mínimo</label>
+            <input id="min_valor" name="min_valor" type="number" step="0.01" min="0" placeholder="R$ 0,00">
+          </div>
+          <div class="campo">
+            <label for="max_valor">Valor máximo</label>
+            <input id="max_valor" name="max_valor" type="number" step="0.01" min="0" placeholder="R$ 0,00">
+          </div>
+        </div>
+        <div class="acoes">
+          <button type="submit" class="btn primario" id="btn-buscar">Buscar empenhos</button>
+          <button type="button" id="btn-sincronizar" class="btn secundario">Sincronizar dados do portal</button>
+          <button type="reset" class="btn secundario" id="btn-limpar">Limpar filtros</button>
+          <span id="status-sync" class="status"></span>
+        </div>
+      </form>
+    </section>
+
+    <section id="resumo" class="resumo hidden">
+      <div class="card kpi"><span class="rotulo">Empenhos</span><span id="kpi-total" class="valor total">0</span></div>
+      <div class="card kpi"><span class="rotulo">Total empenhado</span><span id="kpi-empenhado" class="valor">R$ 0,00</span></div>
+      <div class="card kpi"><span class="rotulo">Total liquidado</span><span id="kpi-liquidado" class="valor">R$ 0,00</span></div>
+      <div class="card kpi"><span class="rotulo">Total pago</span><span id="kpi-pago" class="valor">R$ 0,00</span></div>
+      <div class="card kpi"><span class="rotulo">Favorecidos</span><span id="kpi-fav" class="valor">0</span></div>
+    </section>
+
+    <section class="card grafico hidden" id="sec-grafico">
+      <h2>Evolução mensal — Total empenhado</h2>
+      <canvas id="grafico"></canvas>
+    </section>
+
+    <section class="card resultados hidden" id="sec-resultados">
+      <div class="barra-resultado">
+        <h2>Resultados</h2>
+        <div class="acoes">
+          <button type="button" id="btn-md" class="btn secundario">Relatório Markdown</button>
+          <button type="button" id="btn-csv" class="btn secundario">Baixar CSV</button>
+        </div>
+      </div>
+      <div class="tabela-wrapper">
+        <table id="tabela">
+          <thead>
+            <tr>
+              <th>Empenho</th><th>Data</th><th>Favorecido</th><th>CPF/CNPJ</th>
+              <th>Unidade</th><th>Elemento</th><th class="ativo">Empenhado</th><th class="ativo">Liquidado</th><th class="ativo">Pago</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela"></tbody>
+        </table>
+      </div>
+      <div class="paginacao">
+        <button id="btn-ant" class="btn pequeno">&laquo; Anterior</button>
+        <span id="info-pagina"></span>
+        <button id="btn-prox" class="btn pequeno">Próxima &raquo;</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Ferramenta acadêmica de agregação de dados públicos. Consulte sempre o portal oficial para conferência.</p>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
