@@ -1,0 +1,19 @@
+databases:
+  - name: transparencia-db
+    plan: free
+    databaseName: transparencia
+    user: transparencia
+
+services:
+  - type: web
+    name: transparencia-cidada
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: transparencia-db
+          property: connectionString
