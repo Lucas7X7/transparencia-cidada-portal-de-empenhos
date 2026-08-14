@@ -81,7 +81,7 @@ function atualizarStatusSync() {
   if (txt) {
     el.textContent = txt;
     el.className = "status ok";
-  } else if (portalAtual().tipo === "mt_estado") {
+  } else if (portalAtual().ao_vivo) {
     el.textContent = "Portal consulta ao vivo (não usa cache).";
     el.className = "status";
   } else if (!el.textContent) {
@@ -97,7 +97,7 @@ function portalAtual() {
 function atualizarAvisoPortal() {
   const p = portalAtual();
   const btn = $("btn-sincronizar");
-  if (p.tipo === "mt_estado") {
+  if (p.ao_vivo) {
     btn.disabled = true;
     btn.textContent = "Portal consulta ao vivo (lento)";
     btn.title = "Este portal não possui sincronização em lote; a busca consulta o portal diretamente.";
@@ -123,7 +123,7 @@ function parametros(pagina) {
 
 async function buscar() {
   const p = portalAtual();
-  setStatus(p.tipo === "mt_estado" ? "Consultando portal estadual (pode levar ~30s)..." : "Buscando...", "animado");
+  setStatus(p.ao_vivo ? "Consultando portal estadual (pode levar ~30s)..." : "Buscando...", "animado");
   $("btn-buscar").disabled = true;
   try {
     const r = await fetch("/api/empenhos?" + parametros(state.pagina));

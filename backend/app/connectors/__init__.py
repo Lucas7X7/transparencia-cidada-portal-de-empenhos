@@ -20,6 +20,14 @@ _CONNECTOR_TYPES: dict[str, type[PortalConnector]] = {
     "sp_siafem": SpSiafemConnector,
 }
 
+# Portais consultados ao vivo (sem sincronização em lote viável).
+LIVE_ONLY_TIPOS: frozenset[str] = frozenset({"mt_estado", "sp_siafem"})
+
+
+def e_live_only(portal: PortalInfo) -> bool:
+    """True se o portal é consultado ao vivo (sem cache em lote)."""
+    return portal.tipo in LIVE_ONLY_TIPOS
+
 
 def _default_config() -> list[dict[str, Any]]:
     return [
@@ -51,7 +59,7 @@ def _default_config() -> list[dict[str, Any]]:
             "tipo": "sp_siafem",
             "url": "https://www.transparencia.sp.gov.br",
             "config": {
-                "base": "https://www.transparencia.sp.gov.br/api"
+                "base": "https://www.transparencia.sp.gov.br"
             },
         },
     ]

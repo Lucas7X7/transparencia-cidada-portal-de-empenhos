@@ -10,7 +10,7 @@ from fastapi.responses import HTMLResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
 from app import db
-from app.connectors import criar_conector, listar_portais
+from app.connectors import criar_conector, e_live_only, listar_portais, obter_portal
 from app.services import relatorio, sincronizar
 
 log = logging.getLogger("app")
@@ -61,7 +61,7 @@ def _loop_sync_background(ano: int) -> None:
     log.info("Background sync iniciado (ano=%s, intervalo=%.1fh)", ano, _intervalo_horas())
     while _thread_sync_ativo:
         db.resetar_sincronizacoes_ativas()
-        portais = [p for p in listar_portais() if p.tipo != "mt_estado"]
+        portais = [p for p in listar_portais() if not e_live_only(p)]
         log.info("Rodada background: %d portais", len(portais))
         for portal in portais:
             if not _thread_sync_ativo:
@@ -94,7 +94,7 @@ def _iniciar_sync_background() -> None:
 def portais():
     return [
         {"id": p.id, "nome": p.nome, "uf": p.uf, "esfera": p.esfera,
-         "tipo": p.tipo, "url": p.url}
+         "tipo": p.tipo, "url": p.url, "ao_vivo": e_live_only(p)}
         for p in listar_portais()
     ]
 
@@ -144,7 +144,7 @@ def api_buscar(
     portal_info = next((p for p in listar_portais() if p.id == portal_id), None)
     if portal_info is None:
         raise HTTPException(404, "Portal não encontrado")
-    if portal_info.tipo == "mt_estado":
+    if e_live_only(portal_info):
         origem = "portal"
     if origem == "portal":
         try:
@@ -224,7 +224,7 @@ def api_relatorio_markdown(
     portal = next((p for p in listar_portais() if p.id == portal_id), None)
     if portal is None:
         raise HTTPException(404, "Portal não encontrado")
-    if portal.tipo == "mt_estado":
+    if e_live_only(portal):
         empenhos = _buscar_vivo(portal_id, termo, favorecido, cpf_cnpj,
                                 unidade, data_ini, data_fim)
     else:
@@ -245,7 +245,7 @@ def api_relatorio_csv(
     data_ini: str = Query(""),
     data_fim: str = Query(""),
 ):
-    if _portal_tipo(portal_id) == "mt_estado":
+    if e_live_only(obter_portal(portal_id)):
         empenhos = _buscar_vivo(portal_id, termo, favorecido, cpf_cnpj,
                                 unidade, data_ini, data_fim)
     else:

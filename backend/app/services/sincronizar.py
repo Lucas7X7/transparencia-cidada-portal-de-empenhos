@@ -21,12 +21,12 @@ def sincronizar(
 
     Retorna: {'total': n, 'novos': n, 'atualizados': n}
     """
-    from app.connectors import criar_conector, obter_portal
+    from app.connectors import criar_conector, e_live_only, obter_portal
 
     portal = obter_portal(portal_id)
     if portal is None:
         raise KeyError(f"Portal não cadastrado: {portal_id}")
-    if portal.tipo in ("mt_estado",):
+    if e_live_only(portal):
         raise ValueError(
             "Este portal não suporta sincronização completa: use a busca (origem ao vivo)."
         )
@@ -69,11 +69,10 @@ def sincronizar_portal_com_status(portal_id: str, ano: int) -> None:
     if portal is None:
         log.error("Portal não encontrado: %s", portal_id)
         return
-    db.registrar_sync_inicio(portal_id, portal.nome)
-    if portal.tipo == "mt_estado":
-        log.info("[%s] %s — sem sincronização em lote", portal_id, portal.nome)
-        db.registrar_sync_erro(portal_id, "Portal estadual não suporta sincronização em lote")
+    if e_live_only(portal):
+        log.info("[%s] %s — sem sincronização em lote (consulta ao vivo)", portal_id, portal.nome)
         return
+    db.registrar_sync_inicio(portal_id, portal.nome)
     t0 = time.monotonic()
     try:
         res = sincronizar(portal_id, ano, "", "", com_historico=True)

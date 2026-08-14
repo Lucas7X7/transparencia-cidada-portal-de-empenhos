@@ -193,7 +193,7 @@ def main() -> int:
             "tipo": "sp_siafem",
             "url": "https://www.transparencia.sp.gov.br",
             "config": {
-                "base": "https://www.transparencia.sp.gov.br/api"
+                "base": "https://www.transparencia.sp.gov.br"
             },
         },
         "pb-estado": {
