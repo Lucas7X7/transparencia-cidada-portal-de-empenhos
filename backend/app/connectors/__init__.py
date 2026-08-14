@@ -9,6 +9,9 @@ from app.connectors.ipm import IpmConnector
 from app.connectors.mt_estado import MtEstadoConnector
 from app.connectors.pb_estado import PbEstadoConnector
 from app.connectors.sp_siafem import SpSiafemConnector
+from app.connectors.go_estado import GoEstadoConnector
+from app.connectors.pe_estado import PeEstadoConnector
+from app.connectors.mg_estado import MgEstadoConnector
 from app.models import PortalInfo
 
 _CONFIG_FILE = Path(__file__).resolve().parent / "config" / "portals.json"
@@ -18,10 +21,13 @@ _CONNECTOR_TYPES: dict[str, type[PortalConnector]] = {
     "mt_estado": MtEstadoConnector,
     "pb_estado": PbEstadoConnector,
     "sp_siafem": SpSiafemConnector,
+    "go_estado": GoEstadoConnector,
+    "pe_estado": PeEstadoConnector,
+    "mg_estado": MgEstadoConnector,
 }
 
 # Portais consultados ao vivo (sem sincronização em lote viável).
-LIVE_ONLY_TIPOS: frozenset[str] = frozenset({"mt_estado", "sp_siafem"})
+LIVE_ONLY_TIPOS: frozenset[str] = frozenset({"mt_estado", "sp_siafem", "pe_estado"})
 
 
 def e_live_only(portal: PortalInfo) -> bool:
@@ -60,6 +66,46 @@ def _default_config() -> list[dict[str, Any]]:
             "url": "https://www.transparencia.sp.gov.br",
             "config": {
                 "base": "https://www.transparencia.sp.gov.br"
+            },
+        },
+        {
+            "id": "go-estado",
+            "nome": "Governo do Estado de Goiás",
+            "uf": "GO",
+            "esfera": "estadual",
+            "tipo": "go_estado",
+            "url": "https://transparencia.go.gov.br",
+            "config": {
+                "base": "https://dadosabertos.go.gov.br",
+                "resource_id": "3048c428-83cc-45f9-af01-4d0ecb44d078",
+            },
+        },
+        {
+            "id": "pe-estado",
+            "nome": "Governo do Estado de Pernambuco",
+            "uf": "PE",
+            "esfera": "estadual",
+            "tipo": "pe_estado",
+            "url": "https://transparencia.pe.gov.br",
+            "config": {
+                "base": "https://sistemas.tce.pe.gov.br/DadosAbertos",
+            },
+        },
+        {
+            "id": "mg-estado",
+            "nome": "Governo do Estado de Minas Gerais",
+            "uf": "MG",
+            "esfera": "estadual",
+            "tipo": "mg_estado",
+            "url": "https://transparencia.mg.gov.br",
+            "config": {
+                "resources": {
+                    "2022": "c8757609-bd2e-4864-a75e-f39c72d025f4",
+                    "2023": "ab2a08af-7db8-407a-a4b4-a91e942eef55",
+                    "2024": "38eafdd6-bc1e-4bf9-bc39-bf5842380d6c",
+                    "2025": "2ef02d2b-655e-44a0-aaeb-bdac5c222871",
+                    "2026": "c5edcee8-e67f-4352-b499-d578625669b4",
+                }
             },
         },
     ]

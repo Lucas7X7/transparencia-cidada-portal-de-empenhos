@@ -207,6 +207,46 @@ def main() -> int:
                 "base": "https://api.dados.pb.gov.br/api/v1"
             },
         },
+        "go-estado": {
+            "id": "go-estado",
+            "nome": "Governo do Estado de Goiás",
+            "uf": "GO",
+            "esfera": "estadual",
+            "tipo": "go_estado",
+            "url": "https://transparencia.go.gov.br",
+            "config": {
+                "base": "https://dadosabertos.go.gov.br",
+                "resource_id": "3048c428-83cc-45f9-af01-4d0ecb44d078",
+            },
+        },
+        "pe-estado": {
+            "id": "pe-estado",
+            "nome": "Governo do Estado de Pernambuco",
+            "uf": "PE",
+            "esfera": "estadual",
+            "tipo": "pe_estado",
+            "url": "https://transparencia.pe.gov.br",
+            "config": {
+                "base": "https://sistemas.tce.pe.gov.br/DadosAbertos",
+            },
+        },
+        "mg-estado": {
+            "id": "mg-estado",
+            "nome": "Governo do Estado de Minas Gerais",
+            "uf": "MG",
+            "esfera": "estadual",
+            "tipo": "mg_estado",
+            "url": "https://transparencia.mg.gov.br",
+            "config": {
+                "resources": {
+                    "2022": "c8757609-bd2e-4864-a75e-f39c72d025f4",
+                    "2023": "ab2a08af-7db8-407a-a4b4-a91e942eef55",
+                    "2024": "38eafdd6-bc1e-4bf9-bc39-bf5842380d6c",
+                    "2025": "2ef02d2b-655e-44a0-aaeb-bdac5c222871",
+                    "2026": "c5edcee8-e67f-4352-b499-d578625669b4",
+                },
+            },
+        },
     }
     if CONFIG_FILE.exists():
         try:

@@ -75,6 +75,19 @@ class PortalConnector(ABC):
         return -v if neg else v
 
     @staticmethod
+    def _num_us(valor: Any) -> float:
+        """Converte número no formato dos EUA (ponto decimal, ex.: 1,234.56)."""
+        if valor is None:
+            return 0.0
+        if isinstance(valor, (int, float)):
+            return float(valor)
+        s = str(valor).strip().replace(",", "")
+        try:
+            return float(s)
+        except ValueError:
+            return PortalConnector._num(s)
+
+    @staticmethod
     def _norm(termo: str) -> str:
         import unicodedata
 
