@@ -7,6 +7,7 @@ from typing import Any
 from app.connectors.base import PortalConnector
 from app.connectors.ipm import IpmConnector
 from app.connectors.mt_estado import MtEstadoConnector
+from app.connectors.pb_estado import PbEstadoConnector
 from app.connectors.sp_siafem import SpSiafemConnector
 from app.models import PortalInfo
 
@@ -15,6 +16,7 @@ _CONFIG_FILE = Path(__file__).resolve().parent / "config" / "portals.json"
 _CONNECTOR_TYPES: dict[str, type[PortalConnector]] = {
     "ipm": IpmConnector,
     "mt_estado": MtEstadoConnector,
+    "pb_estado": PbEstadoConnector,
     "sp_siafem": SpSiafemConnector,
 }
 

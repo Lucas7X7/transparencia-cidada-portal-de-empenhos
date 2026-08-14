@@ -185,6 +185,28 @@ def main() -> int:
                 "base": "https://consultas.transparencia.mt.gov.br/despesa/por_favorecido/"
             },
         },
+        "sp-estado": {
+            "id": "sp-estado",
+            "nome": "Governo do Estado de São Paulo",
+            "uf": "SP",
+            "esfera": "estadual",
+            "tipo": "sp_siafem",
+            "url": "https://www.transparencia.sp.gov.br",
+            "config": {
+                "base": "https://www.transparencia.sp.gov.br/api"
+            },
+        },
+        "pb-estado": {
+            "id": "pb-estado",
+            "nome": "Governo do Estado da Paraíba",
+            "uf": "PB",
+            "esfera": "estadual",
+            "tipo": "pb_estado",
+            "url": "https://www.transparencia.pb.gov.br",
+            "config": {
+                "base": "https://api.dados.pb.gov.br/api/v1"
+            },
+        },
     }
     if CONFIG_FILE.exists():
         try:
