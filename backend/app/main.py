@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+import logging
+import os
+import threading
+import time
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import HTMLResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
@@ -8,14 +13,81 @@ from app import db
 from app.connectors import criar_conector, listar_portais
 from app.services import relatorio, sincronizar
 
+log = logging.getLogger("app")
 app = FastAPI(title="Portal de Transparência Cidadã", version="0.1.0")
 
 _FRONT = __import__("pathlib").Path(__file__).resolve().parent.parent.parent / "frontend"
+
+_SYNC_LOCK = threading.Lock()
 
 
 @app.on_event("startup")
 def _startup() -> None:
     db.init_db()
+    _iniciar_sync_background()
+
+
+@app.on_event("shutdown")
+def _shutdown() -> None:
+    global _thread_sync_ativo
+    _thread_sync_ativo = False
+
+
+# ------------------------------------------------------------------
+# Sincronização em background (dentro do próprio app)
+# ------------------------------------------------------------------
+# Ativa quando DATABASE_URL está definida (produção/Render) ou SYNC_BACKGROUND=1.
+# Com o Uptime Robot mantendo o serviço acordado, o app vai sincronizando os
+# portais em segundo plano, sem precisar de um worker pago separado.
+_thread_sync_ativo = False
+
+
+def _sync_enabled() -> bool:
+    v = os.environ.get("SYNC_BACKGROUND", "").strip().lower()
+    if v:
+        return v not in ("0", "false", "no")
+    return bool(os.environ.get("DATABASE_URL", "").strip())
+
+
+def _intervalo_horas() -> float:
+    try:
+        return max(1.0, float(os.environ.get("SYNC_INTERVALO_HORAS", "24")))
+    except ValueError:
+        return 24.0
+
+
+def _loop_sync_background(ano: int) -> None:
+    global _thread_sync_ativo
+    log.info("Background sync iniciado (ano=%s, intervalo=%.1fh)", ano, _intervalo_horas())
+    while _thread_sync_ativo:
+        db.resetar_sincronizacoes_ativas()
+        portais = [p for p in listar_portais() if p.tipo != "mt_estado"]
+        log.info("Rodada background: %d portais", len(portais))
+        for portal in portais:
+            if not _thread_sync_ativo:
+                break
+            try:
+                with _SYNC_LOCK:
+                    sincronizar.sincronizar_portal_com_status(portal.id, ano)
+            except Exception:  # noqa: BLE001
+                log.exception("Falha inesperada no portal %s", portal.id)
+        if _thread_sync_ativo:
+            log.info("Rodada background concluída; próximo ciclo em %.1fh", _intervalo_horas())
+            time.sleep(_intervalo_horas() * 3600)
+
+
+def _iniciar_sync_background() -> None:
+    global _thread_sync_ativo
+    if not _sync_enabled():
+        log.info("Background sync desativado (sem DATABASE_URL)")
+        return
+    try:
+        ano = int(os.environ.get("SYNC_ANO", "2026"))
+    except ValueError:
+        ano = 2026
+    _thread_sync_ativo = True
+    t = threading.Thread(target=_loop_sync_background, args=(ano,), daemon=True, name="sync-background")
+    t.start()
 
 
 @app.get("/api/portais")
@@ -42,7 +114,8 @@ def api_sincronizar(
     com_historico: bool = Query(True),
 ):
     try:
-        return sincronizar.sincronizar(portal_id, ano, data_ini, data_fim, com_historico)
+        with _SYNC_LOCK:
+            return sincronizar.sincronizar(portal_id, ano, data_ini, data_fim, com_historico)
     except KeyError as e:
         raise HTTPException(404, str(e))
     except ValueError as e:

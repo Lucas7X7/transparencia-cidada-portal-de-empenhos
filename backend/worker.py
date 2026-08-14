@@ -34,32 +34,6 @@ def _agora() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
 
-def sincronizar_portal(portal_id: str, ano: int) -> None:
-    portal = next((p for p in listar_portais() if p.id == portal_id), None)
-    if portal is None:
-        log.error("Portal não encontrado: %s", portal_id)
-        return
-    nome = portal.nome
-    db.registrar_sync_inicio(portal_id, nome)
-    if portal.tipo == "mt_estado":
-        log.info("[%s] %s — sem sincronização em lote (consulta ao vivo)", portal_id, nome)
-        db.registrar_sync_erro(portal_id, "Portal estadual não suporta sincronização em lote")
-        return
-    t0 = time.monotonic()
-    try:
-        res = sync_service.sincronizar(portal_id, ano, "", "", com_historico=True)
-        dur = time.monotonic() - t0
-        db.registrar_sync_fim(portal_id, res["total"], res["novos"], res["atualizados"])
-        log.info(
-            "[%s] %s — %d empenhos (%d novos, %d atualizados) em %.1fs",
-            portal_id, nome, res["total"], res["novos"], res["atualizados"], dur,
-        )
-    except Exception as e:  # noqa: BLE001 — continua com os demais portais
-        dur = time.monotonic() - t0
-        db.registrar_sync_erro(portal_id, str(e))
-        log.error("[%s] %s — erro após %.1fs: %s", portal_id, nome, dur, e)
-
-
 def rodar(uma_vez: bool, intervalo_horas: float, ano: int) -> None:
     while True:
         db.resetar_sincronizacoes_ativas()
@@ -67,7 +41,7 @@ def rodar(uma_vez: bool, intervalo_horas: float, ano: int) -> None:
         log.info("=== Iniciando rodada de sincronização: %d portais (%s) ===", len(portais), _agora())
         for portal in portais:
             try:
-                sincronizar_portal(portal.id, ano)
+                sync_service.sincronizar_portal_com_status(portal.id, ano)
             except Exception as e:  # noqa: BLE001
                 log.error("[%s] falha inesperada: %s", portal.id, e)
         log.info("=== Rodada concluída (%s) ===", _agora())

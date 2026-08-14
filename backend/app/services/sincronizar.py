@@ -1,8 +1,13 @@
 from __future__ import annotations
 
+import logging
+import time
+
 from app import db
 from app.connectors.base import PortalConnector
 from app.models import Empenho
+
+log = logging.getLogger("sincronizar")
 
 
 def sincronizar(
@@ -50,6 +55,38 @@ def sincronizar(
         return {"total": total, "novos": novos, "atualizados": atualizados}
     finally:
         conn.close()
+
+
+def sincronizar_portal_com_status(portal_id: str, ano: int) -> None:
+    """Sincroniza um portal e registra o resultado na tabela de status.
+
+    Usado pelo worker (background) e pela sincronização em lote do próprio app.
+    Não lança exceção: erros são gravados no status.
+    """
+    from app.connectors import listar_portais
+
+    portal = next((p for p in listar_portais() if p.id == portal_id), None)
+    if portal is None:
+        log.error("Portal não encontrado: %s", portal_id)
+        return
+    db.registrar_sync_inicio(portal_id, portal.nome)
+    if portal.tipo == "mt_estado":
+        log.info("[%s] %s — sem sincronização em lote", portal_id, portal.nome)
+        db.registrar_sync_erro(portal_id, "Portal estadual não suporta sincronização em lote")
+        return
+    t0 = time.monotonic()
+    try:
+        res = sincronizar(portal_id, ano, "", "", com_historico=True)
+        dur = time.monotonic() - t0
+        db.registrar_sync_fim(portal_id, res["total"], res["novos"], res["atualizados"])
+        log.info(
+            "[%s] %s — %d empenhos (%d novos, %d atualizados) em %.1fs",
+            portal_id, portal.nome, res["total"], res["novos"], res["atualizados"], dur,
+        )
+    except Exception as e:  # noqa: BLE001 — continua com os demais portais
+        dur = time.monotonic() - t0
+        db.registrar_sync_erro(portal_id, str(e))
+        log.error("[%s] %s — erro após %.1fs: %s", portal_id, portal.nome, dur, e)
 
 
 def _gravar_com_historico(conn: PortalConnector, emp: Empenho, com_historico: bool) -> str:
