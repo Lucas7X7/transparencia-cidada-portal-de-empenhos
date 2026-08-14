@@ -247,6 +247,15 @@ def main() -> int:
                 },
             },
         },
+        "ms-estado": {
+            "id": "ms-estado",
+            "nome": "Governo do Estado de Mato Grosso do Sul",
+            "uf": "MS",
+            "esfera": "estadual",
+            "tipo": "ms_estado",
+            "url": "https://www.transparencia.ms.gov.br",
+            "config": {},
+        },
     }
     if CONFIG_FILE.exists():
         try:

@@ -12,6 +12,7 @@ from app.connectors.sp_siafem import SpSiafemConnector
 from app.connectors.go_estado import GoEstadoConnector
 from app.connectors.pe_estado import PeEstadoConnector
 from app.connectors.mg_estado import MgEstadoConnector
+from app.connectors.ms_estado import MsEstadoConnector
 from app.models import PortalInfo
 
 _CONFIG_FILE = Path(__file__).resolve().parent / "config" / "portals.json"
@@ -24,6 +25,7 @@ _CONNECTOR_TYPES: dict[str, type[PortalConnector]] = {
     "go_estado": GoEstadoConnector,
     "pe_estado": PeEstadoConnector,
     "mg_estado": MgEstadoConnector,
+    "ms_estado": MsEstadoConnector,
 }
 
 # Portais consultados ao vivo (sem sincronização em lote viável).
@@ -107,6 +109,15 @@ def _default_config() -> list[dict[str, Any]]:
                     "2026": "c5edcee8-e67f-4352-b499-d578625669b4",
                 }
             },
+        },
+        {
+            "id": "ms-estado",
+            "nome": "Governo do Estado de Mato Grosso do Sul",
+            "uf": "MS",
+            "esfera": "estadual",
+            "tipo": "ms_estado",
+            "url": "https://www.transparencia.ms.gov.br",
+            "config": {},
         },
     ]
 
