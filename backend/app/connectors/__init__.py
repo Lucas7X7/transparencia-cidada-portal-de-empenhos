@@ -7,6 +7,7 @@ from typing import Any
 from app.connectors.base import PortalConnector
 from app.connectors.ipm import IpmConnector
 from app.connectors.mt_estado import MtEstadoConnector
+from app.connectors.sp_siafem import SpSiafemConnector
 from app.models import PortalInfo
 
 _CONFIG_FILE = Path(__file__).resolve().parent / "config" / "portals.json"
@@ -14,6 +15,7 @@ _CONFIG_FILE = Path(__file__).resolve().parent / "config" / "portals.json"
 _CONNECTOR_TYPES: dict[str, type[PortalConnector]] = {
     "ipm": IpmConnector,
     "mt_estado": MtEstadoConnector,
+    "sp_siafem": SpSiafemConnector,
 }
 
 
@@ -37,6 +39,17 @@ def _default_config() -> list[dict[str, Any]]:
             "url": "https://www.transparencia.mt.gov.br",
             "config": {
                 "base": "https://consultas.transparencia.mt.gov.br/despesa/por_favorecido/"
+            },
+        },
+        {
+            "id": "sp-estado",
+            "nome": "Governo do Estado de São Paulo",
+            "uf": "SP",
+            "esfera": "estadual",
+            "tipo": "sp_siafem",
+            "url": "https://www.transparencia.sp.gov.br",
+            "config": {
+                "base": "https://www.transparencia.sp.gov.br/api"
             },
         },
     ]
