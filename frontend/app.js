@@ -2,6 +2,7 @@
 
 const state = {
   portais: [],
+  sincronizacoes: {},
   portal: "",
   pagina: 1,
   porPagina: 50,
@@ -27,6 +28,7 @@ async function carregarPortais() {
     const ufs = new Set(state.portais.map((p) => p.uf).filter(Boolean));
     $("stat-portais").textContent = String(state.portais.length);
     $("stat-ufs").textContent = String(ufs.size);
+    carregarSincronizacoes();
     atualizarAvisoPortal();
   } catch (e) {
     setStatus("Erro ao carregar portais: " + e.message, "erro");
@@ -47,6 +49,44 @@ function preencherSelect(lista) {
     sel.value = atual;
   } else {
     state.portal = sel.value;
+  }
+}
+
+async function carregarSincronizacoes() {
+  try {
+    const r = await fetch("/api/sincronizacoes");
+    const lista = await r.json();
+    state.sincronizacoes = {};
+    for (const s of lista) state.sincronizacoes[s.portal_id] = s;
+    preencherSelect(state.portais);
+    atualizarStatusSync();
+  } catch (e) {
+    /* sem status disponível */
+  }
+}
+
+function statusTextoPortal() {
+  const s = state.sincronizacoes[state.portal];
+  if (!s) return "";
+  if (s.status === "sincronizando") return `Sincronizando agora... (${s.portal_nome || ""})`;
+  if (s.status === "erro") return `Última sincronização com erro.`;
+  const fim = (s.fim || "").replace("T", " ").replace("Z", "");
+  const n = Number(s.total || 0);
+  return `Cache: ${n.toLocaleString("pt-BR")} empenhos (atualizado em ${fim})`;
+}
+
+function atualizarStatusSync() {
+  const el = $("status-sync");
+  const txt = statusTextoPortal();
+  if (txt) {
+    el.textContent = txt;
+    el.className = "status ok";
+  } else if (portalAtual().tipo === "mt_estado") {
+    el.textContent = "Portal consulta ao vivo (não usa cache).";
+    el.className = "status";
+  } else if (!el.textContent) {
+    el.textContent = "Sem dados no cache ainda — sincronize o portal para habilitar busca por palavra-chave.";
+    el.className = "status";
   }
 }
 
@@ -291,6 +331,8 @@ $("portal").addEventListener("change", (e) => {
   state.portal = e.target.value;
   state.pagina = 1;
   atualizarAvisoPortal();
+  setStatus("");
+  atualizarStatusSync();
 });
 $("btn-sincronizar").addEventListener("click", sincronizar);
 $("btn-ant").addEventListener("click", () => {

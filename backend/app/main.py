@@ -27,6 +27,12 @@ def portais():
     ]
 
 
+@app.get("/api/sincronizacoes")
+def sincronizacoes():
+    """Status das sincronizações em lote (executadas pelo worker)."""
+    return db.listar_sincronizacoes()
+
+
 @app.post("/api/sincronizar")
 def api_sincronizar(
     portal_id: str = Query(...),

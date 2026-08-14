@@ -96,7 +96,83 @@ def init_db() -> None:
         _executar(conn, "CREATE INDEX IF NOT EXISTS idx_empenhos_portal ON empenhos (portal_id)", ())
         _executar(conn, "CREATE INDEX IF NOT EXISTS idx_empenhos_data ON empenhos (data_empenho)", ())
         _executar(conn, "CREATE INDEX IF NOT EXISTS idx_empenhos_fav ON empenhos (favorecido)", ())
+        _executar(conn, """
+        CREATE TABLE IF NOT EXISTS sincronizacoes (
+            portal_id TEXT PRIMARY KEY,
+            portal_nome TEXT,
+            status TEXT,
+            total INTEGER DEFAULT 0,
+            novos INTEGER DEFAULT 0,
+            atualizados INTEGER DEFAULT 0,
+            erro TEXT,
+            inicio TEXT,
+            fim TEXT
+        )
+        """, ())
         conn.commit()
+
+
+# ------------------------------------------------------------------
+# Status de sincronização
+# ------------------------------------------------------------------
+def registrar_sync_inicio(portal_id: str, portal_nome: str) -> None:
+    with _connect() as conn:
+        _executar(conn, """
+        INSERT INTO sincronizacoes (portal_id, portal_nome, status, inicio)
+        VALUES (?, ?, ?, ?)
+        ON CONFLICT (portal_id) DO UPDATE SET
+            portal_nome = excluded.portal_nome,
+            status = excluded.status,
+            inicio = excluded.inicio,
+            erro = NULL
+        """, (portal_id, portal_nome, "sincronizando", _agora()))
+        conn.commit()
+
+
+def registrar_sync_fim(portal_id: str, total: int, novos: int, atualizados: int) -> None:
+    with _connect() as conn:
+        _executar(conn, """
+        UPDATE sincronizacoes SET
+            status = 'ok', total = ?, novos = ?, atualizados = ?, fim = ?
+        WHERE portal_id = ?
+        """, (total, novos, atualizados, _agora(), portal_id))
+        conn.commit()
+
+
+def registrar_sync_erro(portal_id: str, erro: str) -> None:
+    with _connect() as conn:
+        _executar(conn, """
+        UPDATE sincronizacoes SET status = 'erro', erro = ?, fim = ?
+        WHERE portal_id = ?
+        """, (erro[:500], _agora(), portal_id))
+        conn.commit()
+
+
+def _agora() -> str:
+    from datetime import datetime, timezone
+
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def resetar_sincronizacoes_ativas() -> None:
+    """Marca como erro as sincronizações que ficaram 'sincronizando' (ex.: crash do worker)."""
+    with _connect() as conn:
+        _executar(conn, """
+        UPDATE sincronizacoes SET status = 'erro', erro = 'interrompido', fim = ?
+        WHERE status = 'sincronizando'
+        """, (_agora(),))
+        conn.commit()
+
+
+def listar_sincronizacoes() -> list[dict]:
+    with _connect() as conn:
+        rows = _filas(
+            conn,
+            "SELECT portal_id, portal_nome, status, total, novos, atualizados, erro, inicio, fim "
+            "FROM sincronizacoes ORDER BY inicio",
+            (),
+        )
+    return rows
 
 
 # ------------------------------------------------------------------
