@@ -13,6 +13,15 @@ from app.connectors.go_estado import GoEstadoConnector
 from app.connectors.pe_estado import PeEstadoConnector
 from app.connectors.mg_estado import MgEstadoConnector
 from app.connectors.ms_estado import MsEstadoConnector
+from app.connectors.ac_estado import AcEstadoConnector
+from app.connectors.pa_estado import PaEstadoConnector
+from app.connectors.ro_estado import RoEstadoConnector
+from app.connectors.sc_estado import ScEstadoConnector
+from app.connectors.rn_estado import RnEstadoConnector
+from app.connectors.es_estado import EsEstadoConnector
+from app.connectors.df_estado import DfEstadoConnector
+from app.connectors.rr_estado import RrEstadoConnector
+from app.connectors.ap_estado import ApEstadoConnector
 from app.models import PortalInfo
 
 _CONFIG_FILE = Path(__file__).resolve().parent / "config" / "portals.json"
@@ -26,10 +35,21 @@ _CONNECTOR_TYPES: dict[str, type[PortalConnector]] = {
     "pe_estado": PeEstadoConnector,
     "mg_estado": MgEstadoConnector,
     "ms_estado": MsEstadoConnector,
+    "ac_estado": AcEstadoConnector,
+    "pa_estado": PaEstadoConnector,
+    "ro_estado": RoEstadoConnector,
+    "sc_estado": ScEstadoConnector,
+    "rn_estado": RnEstadoConnector,
+    "es_estado": EsEstadoConnector,
+    "df_estado": DfEstadoConnector,
+    "rr_estado": RrEstadoConnector,
+    "ap_estado": ApEstadoConnector,
 }
 
 # Portais consultados ao vivo (sem sincronização em lote viável).
-LIVE_ONLY_TIPOS: frozenset[str] = frozenset({"mt_estado", "sp_siafem", "pe_estado"})
+LIVE_ONLY_TIPOS: frozenset[str] = frozenset({
+    "mt_estado", "sp_siafem", "pe_estado", "ac_estado", "pa_estado", "ro_estado",
+})
 
 
 def e_live_only(portal: PortalInfo) -> bool:
@@ -117,6 +137,96 @@ def _default_config() -> list[dict[str, Any]]:
             "esfera": "estadual",
             "tipo": "ms_estado",
             "url": "https://www.transparencia.ms.gov.br",
+            "config": {},
+        },
+        {
+            "id": "ac-estado",
+            "nome": "Governo do Estado do Acre",
+            "uf": "AC",
+            "esfera": "estadual",
+            "tipo": "ac_estado",
+            "url": "https://transparencia.ac.gov.br",
+            "config": {},
+        },
+        {
+            "id": "pa-estado",
+            "nome": "Governo do Estado do Pará",
+            "uf": "PA",
+            "esfera": "estadual",
+            "tipo": "pa_estado",
+            "url": "https://www.transparencia.pa.gov.br",
+            "config": {
+                "base": "https://api-notas-empenho.sistemas.pa.gov.br",
+            },
+        },
+        {
+            "id": "ro-estado",
+            "nome": "Governo do Estado de Rondônia",
+            "uf": "RO",
+            "esfera": "estadual",
+            "tipo": "ro_estado",
+            "url": "https://transparencia.ro.gov.br",
+            "config": {},
+        },
+        {
+            "id": "sc-estado",
+            "nome": "Governo do Estado de Santa Catarina",
+            "uf": "SC",
+            "esfera": "estadual",
+            "tipo": "sc_estado",
+            "url": "https://transparencia.sc.gov.br",
+            "config": {
+                "base": "https://api-portal-transparencia.apps.sm.okd4.ciasc.sc.gov.br",
+            },
+        },
+        {
+            "id": "rn-estado",
+            "nome": "Governo do Estado do Rio Grande do Norte",
+            "uf": "RN",
+            "esfera": "estadual",
+            "tipo": "rn_estado",
+            "url": "https://transparencia.rn.gov.br",
+            "config": {},
+        },
+        {
+            "id": "es-estado",
+            "nome": "Governo do Estado do Espírito Santo",
+            "uf": "ES",
+            "esfera": "estadual",
+            "tipo": "es_estado",
+            "url": "https://transparencia.es.gov.br",
+            "config": {
+                "dataset_id": "99e16b13-0e6f-4504-8544-00de842ab1fd",
+            },
+        },
+        {
+            "id": "df-estado",
+            "nome": "Governo do Distrito Federal",
+            "uf": "DF",
+            "esfera": "estadual",
+            "tipo": "df_estado",
+            "url": "https://www.transparencia.df.gov.br",
+            "config": {
+                "base": "https://www.dados.df.gov.br",
+                "slug": "portal-da-transparencia-despesas-da-administracao-publica-do-distrito-federal",
+            },
+        },
+        {
+            "id": "rr-estado",
+            "nome": "Governo do Estado de Roraima",
+            "uf": "RR",
+            "esfera": "estadual",
+            "tipo": "rr_estado",
+            "url": "https://transparencia.rr.gov.br",
+            "config": {},
+        },
+        {
+            "id": "ap-estado",
+            "nome": "Governo do Estado do Amapá",
+            "uf": "AP",
+            "esfera": "estadual",
+            "tipo": "ap_estado",
+            "url": "https://transparencia.ap.gov.br",
             "config": {},
         },
     ]
